@@ -1,0 +1,22 @@
+LANGUAGES   += c++
+COMPILEOPTS += -std=c++11
+COMPILEOPTS += -Wall
+COMPILEOPTS += -Wextra
+COMPILEOPTS += -pedantic
+COMPILEOPTS += -Werror
+
+LANGUAGES   += c++
+COMPILEOPTS += -Isrc
+
+LIBRARIES   += libriscvcheck.so
+SOURCES     += libriscvcheck/model.c++
+
+LIBRARIES   += libriscvcheck-spike.so
+DEPLIBS     += riscvcheck
+SOURCES     += models/spike.c++
+
+BINARIES    += riscvcheck
+DEPLIBS     += riscvcheck-spike
+SOURCES     += riscvcheck.c++
+
+
